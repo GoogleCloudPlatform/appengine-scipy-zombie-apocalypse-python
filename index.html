@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
+    function updateValue(val, element) {
+      document.getElementById(element).innerHTML=val;
+    }
+  </script>
+  <style type="text/css">
+    #sliders {
+      float: left;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="sliders">
+    <form method="get">
+
+      Initial population:
+      <span id="initial_population">{{ initial_population }}</span>
+      <br>
+      <input type="range" name="initial_population"
+             value="{{ initial_population }}"
+             max="1000" min="0" step="1"
+             onchange="updateValue(this.value, 'initial_population');">
+      <br>
+
+      Initial dead:
+      <span id="initial_death_population">{{ initial_death_population }}</span>
+      <br>
+      <input type="range" name="initial_death_population"
+             value="{{ initial_death_population }}"
+             max="100" min="0" step="1"
+             onchange="updateValue(this.value, 'initial_death_population');">
+      <br>
+
+      Birth rate:
+      <span id="birth_rate">{{ birth_rate }}</span>
+      <br>
+      <input type="range" name="birth_rate"
+             value="{{ birth_rate }}"
+             max="100" min="0" step="1"
+             onchange="updateValue(this.value, 'birth_rate');">
+      <br>
+
+      Transmission percent:
+      <span id="transmission_percent">{{ transmission_percent }}</span>
+      <br>
+      <input type="range" name="transmission_percent"
+             value="{{ transmission_percent }}"
+             max="2" min="0.5" step="0.01"
+             onchange="updateValue(this.value, 'transmission_percent');">
+      <input type="submit" value="Simulate">
+    </form>
+    <a href="/">Reset</a>
+  </div>
+
+  <div id="graph">
+    <p>Zombie Apocalypse:<br>
+      <img src="{{ image_url }}">
+  </div>
+</body>
+</html>

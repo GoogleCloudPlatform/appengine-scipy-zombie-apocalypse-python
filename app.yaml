@@ -1,0 +1,23 @@
+application: your-app-id
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+vm: true
+
+manual_scaling:
+  instances: 1
+
+vm_settings:
+  machine_type: n1-standard-1  # Default
+
+handlers:
+
+# Favicon.  Without this, the browser hits this once per page view.
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+# Main app.  All the real work is here.
+- url: /.*
+  script: main.APPLICATION
