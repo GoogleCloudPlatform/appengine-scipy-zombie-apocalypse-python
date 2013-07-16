@@ -18,10 +18,11 @@ in the [Scipy Cookbook][2].
 
 ## Installing dependency
 
-Currently, you need to install dependencies on the server manually. We
-think this is bad because these dependencies will be lost upon server
-restart. We're discussing how we can provide a way for users to
-install dependencies upon deployments.
+Currently, you need to install dependencies on the server
+manually. Unfortunately these dependencies will be lost upon server
+restart. This is definitely less than ideal, and we're looking into
+options that will allow dependency installation to survive server
+restarts.
 
 0. Install [gcutil][4] if you haven't.
 
