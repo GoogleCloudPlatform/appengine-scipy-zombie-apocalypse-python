@@ -10,6 +10,7 @@ manual_scaling:
 
 vm_settings:
   machine_type: n1-standard-1  # Default
+  apt_get_install: python-numpy python-scipy python-matplotlib
 
 handlers:
 

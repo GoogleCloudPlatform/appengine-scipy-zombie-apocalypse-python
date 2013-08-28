@@ -3,6 +3,7 @@
 This sample is inspired by a [Zombie Apocalypse ODEINT demo][1] listed
 in the [Scipy Cookbook][2].
 
+
 ## Deploying
 
 1. Make sure that you are invited to the [VM Runtime Trusted Tester
@@ -15,17 +16,16 @@ in the [Scipy Cookbook][2].
    ```
    $ $CUSTOM_SDK_DIR/appcfg.py -R update /path/to/application
    ```
+4. Visit the following URL:
+   http://your-app-id.appspot.com/
 
-## Installing dependency
 
-Currently, you need to install dependencies on the server
-manually. Unfortunately these dependencies will be lost upon server
-restart. This is definitely less than ideal, and we're looking into
-options that will allow dependency installation to survive server
-restarts.
+## How to check the logs on the VMs
+
+Basically the logs are available on the App Engine Admin Console, but
+sometimes you need to check the logs on the VMs.
 
 0. Install [gcutil][4] if you haven't.
-
 1. Go to the [Cloud Console][5] and choose the project which is under
    the Trusted Tester Program.
 2. Click Compute Engine.
@@ -34,34 +34,18 @@ restarts.
 4. In the instance details, scroll down to the bottom and find the
    clickable word "ssh", and click it.
 5. Copy the displayed command and execute it on your command line.
-6. Run the following commands:
-
-   ```
-   $ sudo apt-get update
-   $ sudo apt-get install python-numpy python-scipy python-matplotlib
-   ```
-
-## Run the application
-
-Only for the first time for one VM, you need to re-deploy the app for
-recovering an import error.
-
-```
-$ $CUSTOM_SDK_DIR/appcfg.py -R update /path/to/application
-```
-
-And visit the following URL:
-
-    http://your-app-id.appspot.com/
+6. Look into /var/log/app_engine/*.log
 
 
 ## Contributing changes
 
 * See [CONTRIB.md](CONTRIB.md)
 
+
 ## Licensing
 
 * See [LICENSE](LICENSE)
+
 
 [1]: http://wiki.scipy.org/Cookbook/Zombie_Apocalypse_ODEINT
 [2]: http://wiki.scipy.org/Cookbook/
