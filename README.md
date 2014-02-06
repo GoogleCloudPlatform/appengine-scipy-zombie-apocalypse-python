@@ -1,40 +1,26 @@
-## appengine-scipy-zombie-apocalypse
+Copyright (C) 2010-2014 Google Inc.
+# App Engine Python VM Runtime 'Zombie Apocalypse' example
 
 This sample is inspired by a [Zombie Apocalypse ODEINT demo][1] listed
 in the [Scipy Cookbook][2].
 
+It demos use of the `apt_get_install` directive in the `app.yaml` file to load `python-numpy`, `python-scipy`, and `python-matplotlib`.
 
 ## Deploying
 
 1. Make sure that you are invited to the [VM Runtime Trusted Tester
-   Program][3], and download the custom SDK.
+   Program][3], and [download the SDK](http://commondatastorage.googleapis.com/gae-vm-runtime-tt/vmruntime_sdks.html).
 2. Update the `application` value of the `app.yaml` file from
    `your-app-id` to the Application ID which is whitelisted for the VM
    Runtime Trusted Tester Program.
 3. Run the following command:
 
    ```
-   $ $CUSTOM_SDK_DIR/appcfg.py -R update /path/to/application
+   $ <sdk_directory>/appcfg.py -s preview.appengine.google.com update <project_directory>
    ```
+
 4. Visit the following URL:
-   http://your-app-id.appspot.com/
-
-
-## How to check the logs on the VMs
-
-Basically the logs are available on the App Engine Admin Console, but
-sometimes you need to check the logs on the VMs.
-
-0. Install [gcutil][4] if you haven't.
-1. Go to the [Cloud Console][5] and choose the project which is under
-   the Trusted Tester Program.
-2. Click Compute Engine.
-3. Click the instance for the version `1` or the version you are using
-   if you changed it from `1`.
-4. In the instance details, scroll down to the bottom and find the
-   clickable word "ssh", and click it.
-5. Copy the displayed command and execute it on your command line.
-6. Look into /var/log/app_engine/*.log
+   `http://your-app-id.appspot.com/`
 
 
 ## Contributing changes
