@@ -3,9 +3,6 @@ api_version: 1
 threadsafe: true
 vm: true
 
-manual_scaling:
-  instances: 1
-
 vm_settings:
   apt_get_install: python-numpy python-scipy python-matplotlib
 
